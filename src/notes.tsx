@@ -78,11 +78,12 @@ const ClassNotes = () => {
 							SpeechRecognition.startListening({ continuous: true })
 						}} className="px-5 py-2 bg-brand rounded flex justify-center items-center">Start recording</button>
 						<button onClick={() => {
+							setNotesVal(`${notesValue} ${transcript}`)
 							SpeechRecognition.stopListening()
 						}} className="px-5 py-2 bg-brand rounded flex justify-center items-center">Stop recording</button>
 						<button onClick={resetTranscript}>Reset</button>
 					</div>
-					<p>{transcript}</p>
+					{/* <p>{transcript}</p> */}
 					<textarea className="min-h-[500px] w-full bg-[#262626] text-[#E5E5E5] text-[20px] pt-5" value={notesValue} onChange={(e) => setNotesVal(e.target.value)} />
 				</div>
 			</div>

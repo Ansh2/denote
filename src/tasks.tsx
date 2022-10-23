@@ -16,6 +16,7 @@ const Tasks = () => {
 	if(!val) localStorage.setItem('tasks', '[]');
 
 	const addTask = () => {
+		if(taskName == '') return;
 		const newTasks = [...tasks];
 		newTasks.push({name: taskName, desc: taskDesc});
 		setTasks(newTasks);
