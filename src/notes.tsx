@@ -66,7 +66,7 @@ const ClassNotes = () => {
 				<div className="text-[36px] text-brand font-medium">
 					Summary
 				</div>
-				<textarea className="min-h-[200px] w-full bg-[#262626] text-[#E5E5E5] text-[20px]" value={summaryValue} onChange={(e) => setSummary(e.target.value)} />
+				<textarea className="min-h-[180px] w-full bg-[#262626] text-[#E5E5E5] text-[20px]" value={summaryValue} onChange={(e) => setSummary(e.target.value)} />
 			</div>
 			<button className="px-5 py-2 bg-brand rounded flex justify-center items-center my-[50px]" onClick={saveChanges} >Save</button>
 
