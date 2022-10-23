@@ -20,9 +20,9 @@ const ClassNotes = () => {
 		return (<span>Browser doesn&apos;t support speech recognition.</span>);
 	}
 	
-	useEffect(() => {
-		
-	});
+	// useEffect(() => {
+
+	// });
 	// const val = localStorage.getItem('notes');
 	// setNotes(!!val ? JSON.parse(val) : noteData);
 	// if (!val) localStorage.setItem('notes', JSON.stringify(noteData));
