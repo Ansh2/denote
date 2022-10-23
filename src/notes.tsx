@@ -21,25 +21,22 @@ const ClassNotes = () => {
 	}
 	
 	// useEffect(() => {
-
+	// 	const val = localStorage.getItem('notes');
+	// 	setNotes(!!val ? JSON.parse(val) : noteData);
+	// 	if (!val) localStorage.setItem('notes', JSON.stringify(noteData));
 	// });
-	// const val = localStorage.getItem('notes');
-	// setNotes(!!val ? JSON.parse(val) : noteData);
-	// if (!val) localStorage.setItem('notes', JSON.stringify(noteData));
 
 	return (
 		<Content>
-			<div className="flex">
-				<div className="flex flex-col border-r-[#E5E5E5] w-[500px] mb-10 border-r-[3px]">
+			<div className="flex border-b-[#E5E5E5] border-b-[3px]">
+				<div className="flex flex-col border-r-[#E5E5E5] w-[800px] mb-10 border-r-[3px]">
 					<Link to="/">
 						<div className="mb-5 max-h-[50px] w-[150px] flex items-center space-x-[8px] cursor-pointer">
-							<img src={icon} className="h-[35px]" />
-							<div className="text-[#F43F5E] text-[25px] font-medium">Back</div>
+							<img src={icon} className="h-[40px]" />
+							<div className="text-[#F43F5E] text-[36px] font-medium">Connections</div>
 						</div>
 					</Link>	
-					<div className="font-medium text-[30px]">
-						connections ({noteClass})
-					</div>
+					<textarea className="min-h-[500px] w-full bg-[#262626] text-[#E5E5E5]" />
 				</div>
 
 				<div className="px-10 w-full">
@@ -51,12 +48,17 @@ const ClassNotes = () => {
 						<button onClick={() => SpeechRecognition.startListening()} className="px-5 py-2 bg-brand rounded flex justify-center items-center">Start recording</button>
 						<button onClick={() => SpeechRecognition.stopListening()} className="px-5 py-2 bg-brand rounded flex justify-center items-center">Stop recording</button>
 						<button onClick={resetTranscript}>Reset</button>
-					</div>
-					<textarea className="min-h-[500px] w-full bg-white text-black p-5 z-10" />
-					<p>{transcript}</p> */}
-					<button className="px-5 py-2 bg-brand rounded flex justify-center items-center">Save</button>
+					</div> */}
+					<textarea className="min-h-[500px] w-full bg-[#262626] text-[#E5E5E5] p-5 z-10" />
 				</div>
 			</div>
+			<div>
+				<div className="text-[36px] text-brand font-medium">
+					Summary
+				</div>
+				<textarea className="min-h-[200px] w-full bg-[#262626] text-[#E5E5E5] p-5 z-10" />
+			</div>
+			<button className="px-5 py-2 bg-brand rounded flex justify-center items-center my-[50px]">Save</button>
 
 		</Content>
 	)

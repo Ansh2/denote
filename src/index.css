@@ -28,3 +28,7 @@ body {
 .active {
   color: #F43F5E;
 }
+
+textarea:focus {
+  outline: none;
+}

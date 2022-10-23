@@ -15,7 +15,7 @@ function App() {
 	return (
     <Content>
       <div className="flex">
-        <div className="flex flex-col border-r-[#E5E5E5] w-[500px] h-screen mb-10 border-r-[3px]">
+        <div className="flex flex-col border-r-[#E5E5E5] w-[550px] h-screen mb-10 border-r-[3px]">
           <div className="font-medium text-[30px]">
             subjects
           </div>
