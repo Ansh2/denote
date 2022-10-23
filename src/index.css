@@ -29,6 +29,6 @@ body {
   color: #F43F5E;
 }
 
-textarea:focus {
+textarea:focus, input:focus {
   outline: none;
 }
