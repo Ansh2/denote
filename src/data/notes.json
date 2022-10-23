@@ -1,41 +1,20 @@
 {
 	"Biology": {
 		"name": "Biology",
-		"notes": [
-			"sample notes here",
-			"",
-			"another note here"
-		],
-		"connections": [
-			"connection 1 here",
-			"",
-			"connection 2 here"
-		]
+		"notes": "sample notes here",
+		"connections": "sample connections here",
+		"summary": "sample summary here"
 	},
 	"Algebra 2": {
 		"name": "Algebra 2",
-		"notes": [
-			"sample notes here",
-			"",
-			"another note here"
-		],
-		"connections": [
-			"connection 1 here",
-			"",
-			"connection 2 here"
-		]
+		"notes": "sample notes here",
+		"connections": "sample connections here",
+		"summary": "sample summary here"
 	},
 	"AP US History": {
 		"name": "AP US History",
-		"notes": [
-			"sample notes here",
-			"",
-			"another note here"
-		],
-		"connections": [
-			"connection 1 here",
-			"",
-			"connection 2 here"
-		]
+		"notes": "sample notes here",
+		"connections": "sample connections here",
+		"summary": "sample summary here"
 	}
 }
