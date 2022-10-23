@@ -3,7 +3,8 @@ import Content from './components/Content';
 import icon from './arrow-back-circle-outline.svg';
 import { Link, useParams } from 'react-router-dom';
 import noteData from './data/notes.json';
-
+import regeneratorRuntime from "regenerator-runtime";
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 const ClassNotes = () => {
 	const [currNotes, setNotes] = useState<any>({});
 	const params = useParams();
@@ -12,6 +13,13 @@ const ClassNotes = () => {
 	const [notesValue, setNotesVal] = useState('');
 	const [connValue, setConnections] = useState('');
 	const [summaryValue, setSummary] = useState('');
+
+	const {
+		transcript,
+		listening,
+		resetTranscript,
+		browserSupportsSpeechRecognition
+	} = useSpeechRecognition();
 	
 	useEffect(() => {
 		const val = localStorage.getItem('notes');
@@ -40,7 +48,12 @@ const ClassNotes = () => {
 		setSummary(tempData[noteClass].summary);
 	}, [currNotes, noteClass])
 
+	if (!browserSupportsSpeechRecognition) {
+		return <span>Browser doesn't support speech recognition.</span>;
+	}
+
 	if(!noteClass) return <></>;
+
 
 	return (
 		<Content>
@@ -59,6 +72,17 @@ const ClassNotes = () => {
 					<div className="text-[36px] text-brand font-medium">
 						{noteClass} Notes
 					</div>
+					<div className="flex space-x-5 my-5 items-center">
+						<p>Microphone: {listening ? 'on' : 'off'}</p>
+						<button onClick={() => {
+							SpeechRecognition.startListening()
+						}} className="px-5 py-2 bg-brand rounded flex justify-center items-center">Start recording</button>
+						<button onClick={() => {
+							SpeechRecognition.stopListening()
+						}} className="px-5 py-2 bg-brand rounded flex justify-center items-center">Stop recording</button>
+						<button onClick={resetTranscript}>Reset</button>
+					</div>
+					<p>{transcript}</p>
 					<textarea className="min-h-[500px] w-full bg-[#262626] text-[#E5E5E5] text-[20px] pt-5" value={notesValue} onChange={(e) => setNotesVal(e.target.value)} />
 				</div>
 			</div>
