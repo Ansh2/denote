@@ -75,7 +75,7 @@ const ClassNotes = () => {
 					<div className="flex space-x-5 my-5 items-center">
 						<p>Microphone: {listening ? 'on' : 'off'}</p>
 						<button onClick={() => {
-							SpeechRecognition.startListening()
+							SpeechRecognition.startListening({ continuous: true })
 						}} className="px-5 py-2 bg-brand rounded flex justify-center items-center">Start recording</button>
 						<button onClick={() => {
 							SpeechRecognition.stopListening()
