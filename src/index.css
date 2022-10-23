@@ -32,3 +32,9 @@ body {
 textarea:focus, input:focus {
   outline: none;
 }
+
+.task:hover {
+  text-decoration: line-through;
+  cursor: pointer;
+  text-decoration-color: #F43F5E;
+}

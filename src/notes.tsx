@@ -38,7 +38,7 @@ const ClassNotes = () => {
 		setNotesVal(tempData[noteClass].notes);
 		setConnections(tempData[noteClass].connections);
 		setSummary(tempData[noteClass].summary);
-	}, [currNotes])
+	}, [currNotes, noteClass])
 
 	if(!noteClass) return <></>;
 
@@ -48,7 +48,7 @@ const ClassNotes = () => {
 				<div className="flex flex-col border-r-[#E5E5E5] w-[800px] mb-10 border-r-[3px]">
 					<Link to="/">
 						<div className="mb-5 max-h-[50px] w-[150px] flex items-center space-x-[8px] cursor-pointer">
-							<img src={icon} className="h-[40px]" />
+							<img src={icon} className="h-[40px]" alt="icon" />
 							<div className="text-[#F43F5E] text-[36px] font-medium">Connections</div>
 						</div>
 					</Link>	
